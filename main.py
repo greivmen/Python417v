@@ -1596,5 +1596,45 @@ from urllib.request import proxy_bypass_registry
 #
 #
 #
+#
+# print("Вносим изменение в локальный репозиторий")
+import re
+# s = "Я ищу совпадения в 2025 году. И я их найду в 2 счета. [6789]. H.ello_World."
+# # reg = r"6[0-9][0-9][0-9]"
+# reg = r"20*"
+# print(re.findall(reg, s))
+#
 
-print("Вносим изменение в локальный репозиторий")
+# d = "05-03-1987 # Дата рождения"
+#
+# print("Дата рождения", re.sub(r"\s#.*", "", d))
+# print("Дата рождения", re.sub(r"-", ".", d))
+# print("Дата рождения", re.sub(r"-", ".", re.sub(r"\s#.*", "", d)))
+
+# st = "author=Пушкин А.С.; title = Евгений Онегин; price = 200; year= 1831"
+# # reg1 = r"\w+\s*=\s*\w+[\s\w.]*"
+# reg1 = r"\w+\s*=[^;]+"
+# print(re.findall(reg1, st))
+# print(re.split(r";\s+", st))
+
+# s1 = "12 сентября 2025 года"
+# # reg1 = r"\d{4}"
+# # reg1 = r"\d{2,4}"
+# reg1 = r"6[0-9][А-я]"
+# print(re.findall(reg1, s1))
+
+# st = "+7 499 456-45-78, +74994564578, +7(499) 456 45 78, 74994564578"
+# reg1 = r"\+?7\d{10}"
+# print(re.findall(reg1, st))
+# s = "Я ищу совпадения в 2025 году. И я их найду в 2 счета. [6789]. H.ello_World."
+#
+# reg = r"\w+\.$"
+#
+# # print(re.findall(reg, s))
+
+
+def validate_password(password):
+    return re.findall(r"^[A-Za-z0-9@_-]{6,18}$", password)
+
+
+print(validate_password("ma-p@sswOrd"))
