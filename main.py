@@ -1632,9 +1632,262 @@ import re
 #
 # # print(re.findall(reg, s))
 
+#
+# def validate_password(password):
+#     return re.findall(r"^[A-Za-z0-9@_-]{6,18}$", password)
+#
+#
+# print(validate_password("ma-p@sswOrd"))
 
-def validate_password(password):
-    return re.findall(r"^[A-Za-z0-9@_-]{6,18}$", password)
+#
+# s = "5 + 7*2 - 4"
+# reg = r"\s*([+*-])\s*"
+# print(re.split(reg, s))
+#
+# a = "31-11-2021"
+# pattern = r"(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[0-2])-(19[0-9][0-1]|20[0-9][0-9])"
+# print(re.findall(pattern, a))
+
+# s = "Самолет прилетает 10/23/2025. Будем рады вас видеть после 10/24/2025."
+# reg = r"(\d{2})/(\d{2})/(\d{4})"
+#
+# print(re.sub(reg, r"\2.\1.\3", s))
+
+# Рекурсия:
+
+# def elevatr(n):
+#     if n == 0:
+#         print("Вы в подвале")
+#         return
+#     print("=>", n)
+#     elevatr(n - 1)
+#     print(n, end=" ")
+#
+# n1 = 5
+# elevatr(n1)
 
 
-print(validate_password("ma-p@sswOrd"))
+#
+# def sum_list(lst):
+#     res = 0
+#     for i in lst:
+#         res += i
+#     return res
+# def sum_list(lst):  #[1, 3, 5, 7, 9]
+#     if len(lst) == 1:
+#         return lst[0]
+#     else:
+#         return lst[0] + sum_list(lst[1:])
+#
+#
+# print(sum_list([1, 3, 5, 7, 9]))
+
+
+# names = ["Adam", ["Bob", ["Chet", "Cat"], "Bard", "Bert"], "Alex", ["Bea", "Bill"], "Ann"]
+# print(names[0])
+# print(isinstance(names[0], list))
+# print(names[1])
+# print(isinstance(names[1], list))
+# print(names[1][1])
+# print(isinstance(names[1][1], list))
+# print(names[1][1][0])
+# print(isinstance(names[1][1][0], list))
+#
+# names = ["Adam", ["Bob", ["Chet", "Cat"], "Bard", "Bert"], "Alex", ["Bea", "Bill"], "Ann"]
+#
+#
+# def count_item(item_list):
+#     count = 0
+#     for item in item_list:
+#         if isinstance(item, list):
+#             count += count_item(item)
+#         else:
+#             count += 1
+#     return count
+#
+#
+# print(count_item(names))
+
+# ДЗЗЗЗЗЗЗ
+
+# def gret(n):
+#     if n < 0:
+#         print("n =")
+#         return
+#     print("=>", n)
+#     gret(n - 1)
+#     print(n, end=" ")
+#
+#
+# s = 3, 4, 3, -2, 3
+# gret(s)
+
+#
+# f = open("text2.txt", "w")
+# f.write("Замена строки в текстовом файле\nИзменить сторонку в списке;\nЗаписать список в файл;\n")
+# f.close()
+#
+# f = open("text2.txt", "r")
+# read_file = f.readline()
+# print(read_file)
+# read_file[1] = "Hello World\n"
+# print(read_file)
+# f.close()
+#
+# f = open("text2.txt", "w")
+# f.writelines(read_file)
+# f.close()
+
+# f = open("test.txt")
+# print(f.read(3))
+# print(f.tell())  # Возвращает позицию условного курсора в файл
+# print(f.seek(1))  # Перемещает условный курсор в заданную позицию
+# print(f.read())
+# print(f.tell())
+# f.close()
+
+# f = open("text.txt", "r+")
+# print(f.write("I am learning Paython"))
+# print(f.seek(3))
+# print(f.write("-new string-"))
+# print(f.tell())
+# f.close()
+# with open("test.txt", "w+") as f:
+#     print(f.write("0123456789"))
+# print(f.closed)
+#
+# lst = [4.5, 2.8, 3.9, 1.0, 1.3, 4.33, 7.777]
+#
+#
+# def get_line(lt):
+#     lt = list(map(str, lt))
+#     print(lt)
+#     return " ".join(lt)
+#
+#
+# with open("res.txt", 'w') as f:
+#     f.write(str(lst))
+#
+# print("Файл создан")
+#
+
+
+# print(os.getcwd())
+# print(os.listdir())
+# print(os.listdir("folder"))
+# os.makedirs("nested1/nested2/nested3")
+# os.remove("text2.txt")
+# os.rename("res.txt", "res2")
+# os.rename("res2",
+
+# for root, dirs, files in os.walk("nested1", topdown=False):
+#     print("Root", root)
+#     print("\tDirs", dirs)
+#     print("\tfiles", files)
+# import os
+
+# dirs = [r"Work\F1", r"Work\F2\F21"]
+# for d in dirs:
+#     os.makedirs(d)
+# Work\w.txt
+# Work\F1\f11.txt
+# Work\F1\f12.txt
+# Work\F1\f13.txt
+# Work\F2\F21\f211.txt
+# Work\F2\F21\f212.txt
+
+# files = {
+#     "Work": ["w.txt"],
+#     r"Work\F1": ["f11.txt", "f12.txt", "f13.txt"],
+#     r"Work\F2\F21": ["f211.txt", "f212.txt"]
+# }
+#
+# for d, f in files.items():
+#     for file in f:
+#         file_path = os.path.join(d, file)
+#         open(file_path, "w").close()
+#
+#
+# files_with_text = [r"Work\w.txt", r"Work\F1\f12.txt", r"Work\F2\F21\f211.txt", r"Work\F2\F21\f212.txt"]
+#
+# for file in files_with_text:
+#     with open(file, "w") as f:
+#         f.write(f"Какой-то текст в файле {file}")
+
+
+# def gret(n):
+#     if n == 0:
+#         print("n =")
+#         return
+#     print("=>", n)
+#     gret(n < 0)
+#     print(n, end=" ")
+#
+#
+# s = [3, 4, 3, -2, 3]
+# gret(s)
+
+
+# def gret(n):
+#     a = 0
+#     for i in n:
+#         if i < 0:
+#             a += 1
+#     return a
+
+#
+# def gret(n):
+#     if n > 0:
+#         return n
+#     else:
+#         return gret(n[1:])
+#
+#
+#
+# def gret(n):
+#     if not n:
+#         return 0
+#     if n[0] < 0:
+#         return 1 + gret(n[1:])
+#     else:
+#         return gret(n[1:])
+#
+#
+# print("n =", gret([-2, 3, 8, -11, -4, 6]))
+
+# Файлы
+
+# f = open("text.txt")
+# print(f)
+# print(*f)
+# f.close()
+# print(f.closed)
+
+# f = open("text.txt", "r")
+# print(f.read())
+# f.close()
+
+# f = open("text1.txt", "w")
+# f.write("This is line1\nThis is line2\nThis is line3\n")
+#
+# f.close()
+
+# f = open("text1.txt", "r")
+# print(f.readline())
+# print(f.readline())
+# f.close()
+
+# f = open("xyz.txt", "w")
+# f.write("Hello\nWorld")
+# f.close()
+#
+# f = open("xyz.txt", "a")
+# f.write("\nNew text")
+# f.close()
+
+# f = open("xyz.txt", "w")
+# lst = [str(i) for i in range(10, 1000, 10)]
+# print(lst)
+# for ind in lst:
+#     f.write(ind + '\t')
+# f.close()
