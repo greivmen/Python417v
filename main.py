@@ -1891,3 +1891,38 @@ import re
 # for ind in lst:
 #     f.write(ind + '\t')
 # f.close()
+
+# f = open("text2.txt", "w")
+# f.write("Замена строки в текстовом файле;\nизменить строку в списке;\nзаписать список в файл")
+# f.close()
+# f = open("text2.txt", "r")
+# red_file = f.readlines()
+# print(red_file)
+# red_file[1] = "Hello World\n"
+# print(red_file)
+# f.close()
+#
+# f = open("text2.txt", "w")
+# f.writelines(red_file)
+# f.close()
+
+
+# f = open("text2.txt", "w")
+# f.write("Замена строки в текстовом файле;\nизменить строку в списке;\nзаписать список в файл;\n")
+# print("Тест:\n""Замена строки в текстовом файле;\nизменить строку в списке;\nзаписать список в файл;\n")
+# z = int(input("pos1 = "))
+# y = int(input("pos2 = "))
+# f.close()
+# f = open("text2.txt", "r")
+# red_file = f.readlines()
+# # print(red_file)
+# if z < 0 or y < 0 or z >= len(red_file) or y >= len(red_file):
+#     print("Не корректный ввод")
+# else:
+#     red_file[z], red_file[y] = red_file[y], red_file[z]
+#     zam_str = ''.join(red_file)
+#     print(zam_str)
+# f.close()
+# f = open("text2.txt", "w")
+# f.writelines(red_file)
+# f.close()
