@@ -21,8 +21,10 @@ from dataclasses import asdict
 from itertools import count
 from multiprocessing.context import set_spawning_popen
 from platform import python_implementation
+from runpy import run_path
 from sys import prefix
 from textwrap import dedent
+from tkinter.font import names
 from urllib.request import proxy_bypass_registry
 
 # first_name = "admin"
@@ -1926,3 +1928,380 @@ import re
 # f = open("text2.txt", "w")
 # f.writelines(red_file)
 # f.close()
+
+# class Point:
+#     x = 1
+#     y = 2
+#
+#     def set_coords(self, x1, y1):
+#         self.x = x1
+#         self.y = y1
+#         print(self.__dict__)
+#
+#
+# p1 = Point()
+# # p1.x = 100
+# # p1.y = 200
+# p1.set_coords(100, 200)
+# Point.set_coords(p1, 111, 222)
+#
+# # print(p1.__dict__)
+#
+# p2 = Point()
+# print(p2.x, p2.y)
+# print(p2.__dict__)
+#
+# print(Point.__dict__)
+
+# class Human:
+#     name = "name"
+#     birthday = "00.00.0000"
+#     phone = "00-00-00"
+#     country = "country"
+#     city = "city"
+#     address = "street, house"
+#
+#     def print_info(self):
+#         print(" Персональные данные ". center(40, "*"))
+#         print(f"Имя: {self.name}\nДата рождения: {self.birthday}\nНомер телефона: {self.phone}\nСтрана: {self.country}\nГород: {self.city}\nАдрес: {self.address}")
+#         print("=" * 40)
+#
+#     def input_info(self, first_name, birhday, phone, country, city, addrws):
+#         self.name = first_name
+#         self.birthday = birhday
+#         self.phone = phone
+#         self.country = country
+#         self.city = city
+#         self.address = addrws
+#
+#     def set_name(self, name):
+#         self.name = name
+#
+#     def get_name(self):
+#         return self.name
+#
+#
+# h1 = Human()
+# h1.print_info()
+# h1.input_info("Юля", "23.05.1896", "45-46-98", "Россия", "Москва", "Чистопрудный бульвар, 1А")
+# h1.print_info()
+# h1.set_name("Юлия")
+# print(h1.get_name())
+#
+#
+
+# class Person:
+#     skill = 10
+#
+#
+#     def print_info(self, name, surname):
+#         self.name = name
+#         self.surname = surname
+#         print("\nДанные сотрудника:", self.name, self.surname)
+#
+#     def add_slill(self, k):
+#         self.skill += k
+#         print("Квалификация сотрудника:", self.skill)
+#
+#
+# p1 = Person()
+# p1.print_info("Виктор", "Резник")
+# p1.add_slill(3)
+#
+# p2 = Person()
+# p2.print_info("Анна", "Долгих")
+# p2.add_slill(2)
+
+
+# class Robot:
+#     k = 0
+#
+#     def __init__(self, name):
+#         self.name = name
+#         print("Инициализация робота:", self.name)
+#         Robot.k += 1
+#
+#     def say_hi(self):
+#         print("Приветствую! Меня зовут:", self.name)
+#
+#     def __del__(self):
+#         print(self.name, "выключается ")
+#         Robot.k -= 1
+#
+#         if Robot.k == 0:
+#             print(self.name, "Был последним")
+#         else:
+#             print("Работающих роботов осталось", Robot.k)
+#
+#
+# droid1 = Robot('R2-D2')
+# droid1.say_hi()
+# print("Численность роботов:", Robot.k)
+#
+# droid2 = Robot('C-3PO')
+# droid2.say_hi()
+# print("Численность роботов:", Robot.k)
+#
+# print("\nЗдесь роботы могут проделать какую-то работу\n")
+#
+# print("Роботы закончили свою работу. Давайте их выключим.")
+#
+# del droid1
+# del droid2
+#
+# print("Численность роботов:", Robot.k)
+
+# class Point:
+#     def __init__(self, x, y):
+#         self.__x = x
+#         self.__y = y
+#
+#     def __set_x(self, x):
+#         print("Вызов _set_x")
+#         self.__x = x
+#
+#     def __get_x(self):
+#         print("Вызов __get_x")
+#         return self.__x
+#
+#     x = property(__get_x, __set_x)
+#
+#
+# p1 = Point(5, 10)
+# print(p1.x)
+#
+# class KgToPounds:
+#     def __init__(self, kg):
+#         self.__kg = kg
+#
+#     @property
+#     def kg(self):
+#         return self.__kg
+#
+#     @kg.setter
+#     def kg(self, new_kg):
+#         if isinstance(new_kg, (int, float)):
+#         self.__kg = new_kg
+#
+#
+#
+#     def to_pound(self):
+#         return self.__kg * 2.205
+#
+#
+# w = KgToPounds(12)
+# print(w.kg, "кг =>", w.to_pound(), "фунтов")
+# w.kg = 41
+# print(w.kg, "кг =>", w.to_pound(), "фунтов")
+# w.kg = "десять"
+# print(w.kg, "кг =>", w.to_pound(), "фунтов")
+
+# cnt())
+
+# class Numbers:
+#     @staticmethod
+#     def max(a, b, c, d):
+#         mx = a
+#         if b > mx:
+#             mx = b
+#         if c > mx:
+#             mx = c
+#         if d > mx:
+#             mx = d
+#         return mx
+#
+#
+# print(Numbers.max(3, 5, 7, 9))
+
+# class Point:
+#     """"Класс для предоставления координатор точек на плоскостей"""
+#     x = 1
+#     y = 2
+#
+#     def set_coords(self, x1, y1):
+#         self.x = x1
+#         self.y = y1
+#         print(self.__dict__)
+#
+#
+# p1 = Point()
+# # p1.x = 100
+# # p1.y = 200
+# # print(p1.x, p1.y)
+# p1.set_coords(100, 200)
+
+# print(p1.__dict__)
+#
+# p2 = Point()
+# print(p2.x, p2.y)
+# print(p2.__dict__)
+#
+# print(Point.__doc__)
+#==============================================
+# class Car:
+#     model = "model"
+#     year = "year"
+#     creator = "creator"
+#     power = "power"
+#     colour = "colour"
+#     price = "price"
+#
+#     def print_ifo(self):
+#         print("Данные автомобиля".center(40, "*"))
+#         print(f"Название модели: {self.model}\nГод выпуска: {self.year}\nПроизводитель: {self.creator}\nМощность  "
+#               f"двигателя: {self.power} л.с\nЦвет машины: {self.colour}\nЦена: {self.price}")
+#         print("=" * 40)
+#
+#     def input_info(self, model, year, creator, power, colour, price):
+#         self.model = model
+#         self.year = year
+#         self.creator = creator
+#         self.power = power
+#         self.colour = colour
+#         self.price = price
+#
+#     def set_model(self, model):
+#         self.model = model
+#
+#     def get_model(self):
+#         return self.model
+#
+#
+# h1 = Car()
+# h1.print_ifo()
+# h1.input_info("X7 M50i", "2021", "BMV", "530", "white", "10790000")
+# h1.print_ifo()
+# h1.set_model("X6")
+# h1.print_ifo()
+# print(h1.get_model())
+
+#========================================================
+
+# class Person:
+#     skill = 10
+#
+#     def __init__(self, name, surname):
+#         self.name = name
+#         self.surname = surname
+#         print("Инициализатор")
+#
+#     def __del__(self):
+#         print("Финализатор (деструктор)")
+#
+#     def print_info(self):
+#         print("\nДанные сотрудника:", self.name, self.surname)
+#
+#     def add_skill(self, k):
+#         self.skill += k
+#         print("Квалификация сотрудника:", self.skill)
+#
+#
+# p1 = Person("Виктор", "Резник")
+# p1.print_info()
+# p1.add_skill(3)
+# # del p1
+# p1 = 5
+#
+# p2 = Person("Анна", "Долгих")
+# p2.print_info()
+# p2.add_skill(2)
+#
+# class Point:
+#     count = 0
+#
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+#         Point.count += 1
+#
+#
+# p1 = Point(1, 2)
+# p2 = Point(10, 20)
+# p3 = Point(100, 200)
+# print(Point.count)
+# print(p1.count)
+# print(p2.count)
+#
+# # print(p1.__dict__)
+# print(p2.__dict__)
+# print(p3.__dict__)
+
+# class Robot:
+#     k = 0
+#
+#     def __init__(self, name):
+#         self.name = name
+#         print("Инициализация робота: ", self.name)
+#         Robot.k += 1
+#
+#     def sya_hi(self):
+#         print("Приветствую меня зовут: ", self.name)
+#
+#     def __del__(self):
+#         print(self.name, "выключается")
+#         Robot.k -= 1
+#         if Robot.k == 0:
+#             print(self.name, "был последним")
+#         else:
+#             print("Работающих роботов осталось: ", Robot.k)
+#
+#
+# droid1 = Robot('R2-D2')
+# droid1.sya_hi()
+# print("Численность роботов: ", Robot.k)
+#
+# droid2 = Robot('P5-CO')
+# droid2.sya_hi()
+# print("Численность роботов: ", Robot.k)
+#
+# droid3 = Robot('C3-PO')
+# droid3.sya_hi()
+# print("Численность роботов: ", Robot.k)
+#
+# print("\nЗдесь роботы могут делать какую-то работу\n")
+#
+# print("Роботы закончили свою работу давайте их выключим:")
+#
+# del droid1
+# del droid2
+# del droid3
+#
+# print("Численность роботов: ", Robot.k)
+#
+#
+# class Point:
+#
+#     def __init__(self, x, y):
+#         self.__x = x
+#         self.__y = y
+#
+#     def get_coord(self):
+#         return self.__x, self.__y
+#
+#     def __check_value(c):
+#         if isinstance(c, int) or isinstance(c, float):
+#             return True
+#         return False
+#
+#     def set_coord(self, x, y):
+#         # if (isinstance(x, int) or isinstance(x, float)) and (isinstance(y, int) or isinstance(y, float)):
+#         if Point.__check_value(x) and Point. __check_value(y):
+#             self.__x = x
+#             self.__y = y
+#         else:
+#             print("Координаты должны быть числами")
+#
+#
+# p1 = Point(5, 10)
+# print(p1.__dict__)
+# p1.set_coord(1, "2.5")
+# print(p1.get_coord())
+#
+# print(Point.__check_value(5))
+# # p1.set_coord("abc", 2)
+# print(p1.get_coord())
+# p1.x = "abc"
+# p1.x = "abc"
+# p1.y = "qwe"
+# print(p1.__dict__)
+# print(p1.x, p1.y)
