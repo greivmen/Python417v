@@ -1266,7 +1266,6 @@ from urllib.request import proxy_bypass_registry
 # for i in region:
 
 
-
 # a = ["Декабрь", "Январь", "Февраль", "Март"]
 # b = [12, 1, 2, 3]
 # c = [1.0, 2.0, 3.0]
@@ -1578,7 +1577,6 @@ from urllib.request import proxy_bypass_registry
 #
 
 
-
 # print(text.find("о"))
 # print(text.rfind("о"))
 
@@ -1601,6 +1599,8 @@ from urllib.request import proxy_bypass_registry
 #
 # print("Вносим изменение в локальный репозиторий")
 import re
+
+
 # s = "Я ищу совпадения в 2025 году. И я их найду в 2 счета. [6789]. H.ello_World."
 # # reg = r"6[0-9][0-9][0-9]"
 # reg = r"20*"
@@ -2305,3 +2305,161 @@ import re
 # p1.y = "qwe"
 # print(p1.__dict__)
 # print(p1.x, p1.y)
+
+#
+# class Pont:
+#     def __init__(self, x, y):
+#         self.__x = x
+#         self.__y = y
+#
+#     def __set_x(self, x):
+#         print("Вызов __set.x")
+#         self.__x = x
+#
+#     def __get_x(self):
+#         print("Вызов __get_x")
+#         return self.__x
+#
+#     x = property( __get_x, __set_x)
+#
+#
+# p1 = Pont(5, 10)
+# print(p1.x)
+# p1.x = 50
+# print(p1.x)
+#
+# class KgToPounds:
+#     def __init__(self, kg):
+#         self.__kg = kg
+#
+#     @property
+#     def kg(self):
+#         return self.__kg
+#
+#     @kg.setter
+#     def kg(self, new_kg):
+#         if isinstance(new_kg, (int, float)):
+#             self.__kg = new_kg
+#         else:
+#             print("Килограммы задаются только числами")
+#
+#     def to_pound(self):
+#         return self.__kg * 2.205
+#
+#
+# w = KgToPounds(12)
+# print(w.kg, "кг =>", w.to_pound(), "фунтов")
+# w.kg = 41
+# print(w.kg, "кг =>", w.to_pound(), "фунтов")
+# w.kg = "десять"
+#
+# class Person:
+#     def __init__(self, name, age):
+#         self.__name = name
+#         self.__age = age
+#
+#     @property
+#     def name(self):
+#         return self.__name
+#
+#     @name.setter
+#     def name(self, name1):
+#         if isinstance(name1, str):
+#             self.__name = name1
+#         else:
+#             print("Не строка")
+#
+#     @property
+#     def age(self):
+#         return self.__age
+#
+#     @age.setter
+#     def age(self, age1):
+#         if isinstance(age1, int):
+#             self.__age = age1
+#         else:
+#             print("Не число")
+#
+#     @name.deleter
+#     def name(self):
+#         del self.__name
+#
+#     @age.deleter
+#     def age(self):
+#         del self.__age
+#
+#
+# person = Person("Irina", 26)
+# print(person.__dict__)
+# person.name = "Igor"
+# print(person.__dict__)
+# person.age = 23
+# print(person.__dict__)
+# del person.name
+# print(person.__dict__)
+#
+#
+
+# class Point:
+#     __count = 0
+#
+#     def __init__(self, x=0, y=0):
+#         self.x = x
+#         self.y = y
+#         Point.__count += 1
+#
+#     @staticmethod
+#     def get_count():
+#         return Point.__count
+#
+#
+# p1 = Point()
+# p2 = Point()
+# p3 = Point()
+# # print(Point.__dict__)
+# print(Point.get_count())
+#
+#
+
+# class Numbers:
+#     @staticmethod
+#     def max(a, b, c, d):
+#         return a, b, c, d
+#
+#
+# print(max(Numbers.max(3, 5, 7, 9)))
+
+
+# class Date:
+#     def __init__(self, day, month, year):
+#         self.day = day
+#         self.month = month
+#         self.year = year
+#
+#     def string_to_db(self):
+#         return f"{self.year}-{self.month}-{self.day}"
+#
+#     @classmethod
+#     def from_string(cls, sting_date):
+#         day, month, year = map(int, sting_date.split("."))
+#         date = Date(day, month, year)
+#         return date
+#
+#
+# date1 = Date.from_string("23.10.2025")
+# print(date1.string_to_db())
+
+# sting_date = "23.10.2025"
+# day, month, year = map(int, sting_date.split("."))
+# print(day, month, year)
+# date = Date(day, month, year)
+# print(date.string_to_db())
+
+
+
+
+
+
+
+
+

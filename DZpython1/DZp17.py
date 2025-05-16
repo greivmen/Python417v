@@ -14,10 +14,12 @@ class Car:
               f"двигателя: {self.__power} л.с\nЦвет машины: {self.__colour}\nЦена: {self.__price} $")
         print("=" * 40)
 
-    def get_model(self):
+    @property
+    def model(self):
         return self.__model
 
-    def set_model(self, model):
+    @model.setter
+    def model(self, model):
         if isinstance(model, str) or isinstance(model, float):
             self.__model = model
         else:
@@ -73,9 +75,9 @@ h1 = Car("X7 M50i", 2021, "BMV", "530", "white", 10790000)
 # h1.print_ifo()
 
 h1.print_ifo()
-h1.set_model("X6")
-print(h1.get_model())
+h1.model = "X6"
 h1.print_ifo()
+print(h1.model)
 # h1.set_year(2025)
 # print(h1.get_year())
 # h1.set_creator("KIA")
