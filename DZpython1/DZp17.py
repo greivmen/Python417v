@@ -92,6 +92,3 @@ print(h1.model)
 # h1.set_price(123)
 # print(h1.get_price())
 # h1.print_ifo()
-
-
-
