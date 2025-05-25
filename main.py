@@ -2862,3 +2862,294 @@ import re
 # t1 = RoundTable(radius=20)
 # print(t1.__dict__)
 # print(t1.clas_area())
+#
+# class A:
+#     def __init__(self):
+#         print("init A")
+#
+#
+# class B(A):
+#     def __init__(self):
+#         print("init B")
+#
+#
+# class C(A):
+#     def __init__(self):
+#         print("initC")
+#
+#
+#
+# class D(B, C):
+#     def __init__(self):
+#         print("init A")
+#
+#
+# d = D()
+# print(D.mro())
+# # print(D.__mro__)
+#
+#
+# class AA:
+#     def __init__(self):
+#         print("init A")
+#
+#
+# class B(A):
+#     def __init__(self):
+#         print("init B")
+#
+#
+# class C(AA):
+#     def __init__(self):
+#         print("initC")
+#
+#
+#
+# class D(B, C):
+#     def __init__(self):
+#         print("init A")
+#
+#
+# d = D()
+# print(D.mro())
+# # print(D.__mro__)
+#
+# class Point:
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+#
+#     def __str__(self):
+#         return f"{self.x}, {self.y}"
+#
+#
+# class Styles:
+#     def __init__(self, color="red", width=1):
+#         print("Init Styles")
+#         self.color = color
+#         self.width = width
+#
+#
+# class Pos:
+#     def __init__(self, sp: Point, ep: Point, *args):
+#         print("Init Pos")
+#         self.sp = sp
+#         self.ep = ep
+#         super().__init__(*args)
+#
+#
+# class Line(Pos, Styles):
+#     def draw(self):
+#         print(f"Рисование линии: {self.sp} {self.ep} {self.color} {self.width}")
+#
+#
+# l1 = Line(Point(10, 10), Point(100, 100), "green", 5)
+# l1.draw()
+#
+# class Clock:
+#     __DAY = 86400
+#
+#     def __init__(self, sec: int):
+#         if not isinstance(sec, int):
+#             raise ValueError("Секунды должны быть целым числом")
+#         self.sec = sec % self.__DAY
+#
+#     def get_format_time(self):
+#         s = self.sec % 60
+#         m = (self.sec // 60) % 60
+#         h = (self.sec // 3600) % 24
+#         return f"{Clock.get_form(h)}:{Clock.get_form(m)}:{Clock.get_form(s)}"
+#
+#     @staticmethod
+#     def get_form(x):
+#         return str(x) if x > 9 else "0" + str(x)
+#
+#     def __add__(self, other):
+#         if not isinstance(other, Clock):
+#             raise ArithmeticError("Правый операнд должен быть типом данных Clock")
+#         return Clock(self.sec + other.sec)  # Clock(300)
+#
+#     def __getitem__(self, item):
+#         if not isinstance(item, str):
+#             raise ValueError("Ключ должен быть строкой")
+#         if item == "hour":
+#             return (self.sec // 3600) % 24
+#
+#         if item == "min":
+#             return (self.sec // 60) % 60
+#
+#         if item == "sec":
+#             return self.sec % 60
+#
+#         return "Неверный ключ"
+#
+#     def __setitem__(self, key, value):
+#         if not isinstance(key, str):
+#             raise ValueError("Ключ должен быть строкой")
+#
+#         if not isinstance(value, int):
+#             raise ValueError("Значение должно быть целым числом")
+#
+#         s = self.sec % 60
+#         m = (self.sec // 60) % 60
+#         h = (self.sec // 3600) % 24
+#
+#         if key == "hour"
+#             self.sec = s + 60 * m + value * 3600
+#
+# c1 = Clock(80000)
+# print(c1.get_format_time())
+# #
+# # print(c1["hour"], c1["min"], c1["sec"])
+# c1["hour"] = 14
+# print(c1["hour", c1["min"], c1])
+#
+# # c2 = Clock(200)
+# c4 = Clock(300)
+# c3 = c1 + c2 + c4
+# print(c1.get_format_time())
+# print(c2.get_format_time())
+# print(c4.get_format_time())
+# print(c3.get_format_time())
+# from random
+#
+# class Cat:
+#     def __init__(self, name, age, pol):
+#         self.name = name
+#         self.age = age
+#         self.pol = pol
+#
+#     def __str__(self):
+#         if self.pol == "M":
+#             return f"{self.name} is good boy!!!"
+#         elif self.pol == "F":
+#             return f"{self.name} is good girl!!!"
+#         else:
+#             return f"{self.name} is good Kitty!!!"
+#
+#     def __add__(self, other):
+#         if self.pol != other.pol:
+#             return Cat("No name", 0, ["M", "F"])
+#         else:
+#             raise TypeError("Types are not support!")
+#
+#
+# cat1 = Cat("Tom", 4, "M")
+# cat2 = Cat("Elsa", 5, "F")
+# # cat3 = Cat("Murzik", 3, "M")
+# print(cat1)
+# print(cat2)
+# # print(cat3)
+# print(cat1 + cat2)
+#
+# class Rectangle:
+#     def __init__(self, w, h):
+#         self.w = w
+#         self.h = h
+#
+#     def perimetr(self):
+#         return 2 * (self.w + self.h)
+#
+#
+# class Square:
+#     def __init__(self, a):
+#         self.a = a
+#
+#     def perimetr(self):
+#         return 2 * self.a
+#
+#
+# class Triangle:
+#     def __init__(self, a, b, c):
+#         self.a = a
+#         self.b = b
+#         self.c = c
+#
+#     def perimetr(self):
+#         return self.a + self.b + self.c
+#
+#
+# r1 = Rectangle(1, 2)
+# r2 = Rectangle(3, 4)
+#
+# s1 = Square(10)
+# s2 = Square(20)
+#
+# t1 = Triangle(1, 2, 3)
+# t2 = Triangle(4, 5, 6)
+#
+# shape = [r1, r2, s1, s2, t1, t2]
+#
+# for g in shape:
+#     print(g.perimetr())
+#
+# from abc import ABC, abstractmethod
+#
+#
+# class Shape(ABC):
+#     def __init__(self, color):
+#         self.color = color
+#
+#     @abstractmethod
+#     def get_perimetr(self):
+#         pass
+#
+#     @abstractmethod
+#     def get_area(self):
+#         pass
+#
+#     @abstractmethod
+#     def draw(self):
+#         pass
+#
+#     @abstractmethod
+#     def info(self):
+#         pass
+#
+#
+# class Square(Shape):
+#     def __init__(self, side, color):
+#         super().__init__(color)
+#         self.side = side
+#
+#     def get_perimetr(self):
+#         return self.side * 4
+#
+#     def get_area(self):
+#         return self.side * self.side
+#
+#     def draw(self):
+#         return ("*  " * self.side + "\n") * self.side
+#
+#     def info(self):
+#         print(f"=== Квадрат ===\nСторона: {self.side}\nЦвет: {self.color}\nПлощадь:{self.get_area()}\nПериметр:"
+#               f"{self.get_perimetr()}\n{self.draw()}\n")
+#
+#
+# class Rectangle(Shape):
+#     def __init__(self, length, width, color):
+#         super().__init__(color)
+#         self.length = length
+#         self.width = width
+#
+#
+# def get_perimetr(self):
+#     return self.side * 4
+#
+#
+# def get_area(self):
+#     return self.side * self.side
+#
+#
+# def draw(self):
+#     return ("*  " * self.side + "\n") * self.side
+#
+#
+# def info(self):
+#     print(f"=== Прямоугольник ===\nДлина: {self.lenght}\n Ширина: {self.widthmmmmmmmm}Цвет: {self.color}\nПлощадь"
+#           f":{self.get_area()}\nПериметр:"
+#           f"{self.get_perimetr()}\n{self.draw()}\n")
+#
+#
+# sq = Square(3, "red")
+# sq.info()
