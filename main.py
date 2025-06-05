@@ -3716,9 +3716,86 @@ import re
 # electric_car = eleccar.Electro("Tesla", "T", 2018, 99000)
 # print(electric_car.print_info())
 
-from nevcar.el import Electro
+# from nevcar.el import Electro
+#
+#
+# def run():
+#     electric_car = Electro("Tesla", "T", 2018, 99000, 100)
+#     print(electric_car.print_info())
 
-
-def run():
-    electric_car = Electro("Tesla", "T", 2018, 99000, 100)
-    print(electric_car.print_info())
+# import json
+#
+#
+# class CountryCapital:
+#     @staticmethod
+#     def add_country(file_name):
+#         new_country = input("Введите название страны: ").lower()
+#         new_capital = input("Введите название столицы: ").lower()
+#
+#         try:
+#             data = json.load(open(file_name))
+#         except FileNotFoundError:
+#             data = {}
+#
+#         data[new_country] = new_capital
+#
+#         with open(file_name, "w") as f:
+#             json.dump(data, f)
+#
+#     @staticmethod
+#     def load_from_file(file_name):
+#         with open(file_name) as f:
+#             print({k.capitalize(): v.capitalize() for k, v in json.load(f).items()})
+#
+#     @staticmethod
+#     def delete_country(file_name):
+#         del_country = input("Введите название страны: ".lower())
+#
+#         try:
+#             data = json.load(open(file_name))
+#         except FileNotFoundError:
+#             data = {}
+#
+#         if del_country in data:
+#             del data[del_country]
+#             with open(file_name, "w") as f:
+#                 json.dump(data, f)
+#
+#         else:
+#             print("Такой страны в базе дынных нет")
+#
+#     @staticmethod
+#     def search_data(file_name):
+#         country = input("Введите название страны: ".lower())
+#
+#         try:
+#             data = json.load(open(file_name))
+#         except FileNotFoundError:
+#             data = {}
+#
+#         if country in data:
+#             print(f"Страна {country.capitalize()} столица {data[country].capitalizq()} есть в словаре")
+#
+#         else:
+#             print(f"Страны {country.capitalize()} нет в словаре")
+#
+#
+# file = "List_capital.json"
+# while True:
+#     index = input("Выбор действия:\n1 - добавление данных\n2 - удаление данных\n3 - поиск данных\n4 - редактирование "
+#                   "данных\n5 - просмотр данных\n6 - завершение работы\nВвод:")
+#     if index == "1":
+#         CountryCapital.add_country(file)
+#     if index == "2":
+#         CountryCapital.delete_country(file)
+#
+#     if index == "3":
+#         CountryCapital.search_data(file)
+#
+#     elif index == "5":
+#         CountryCapital.load_from_file(file)
+#
+#     elif index == "6":
+#         break
+#     else:
+#         print("Введен не корректный номер")
