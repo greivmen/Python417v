@@ -1,0 +1,16 @@
+{% include 'header.html'%}
+
+{% from 'dialog.html' import dialog_1 as dlg %}
+{% from 'dialog.html' import dialog_2 as btn %}
+
+<h1>{{title}}</h1>
+
+{{ dlg("Имя") }}
+{{ dlg("Фамилия") }}
+{{ dlg("Адрес") }}
+{{ dlg("Телефон") }}
+{{ dlg("Почта") }}
+{{ btn() }}
+
+
+{% include 'footer.html' %}
