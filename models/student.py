@@ -5,7 +5,7 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 class Student(Base):
     __tablename__ = "student"
 
-    id = Colum( Integer, primary_key=True)
+    id = Column(Integer, primary_key=True)
     surname = Column(String(250), nullable=False)
     name = Column(String(250), nullable=False)
     patronymic = Column(String(250), nullable=False)
@@ -20,4 +20,9 @@ class Student(Base):
         self.group = id_group
 
     def __repr__(self):
-        return f"Студент(ФИО: {self.surname} {self.name} {self.patronymic}, Возраст: {self.age} ID группы: {self.group})"
+        return (f"Студент(ФИО: {self.surname} {self.name} {self.patronymic}, Возраст: {self.age}"
+                f" ID группы: {self.group})")
+
+
+
+

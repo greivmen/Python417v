@@ -3,8 +3,8 @@ from sqlalchemy import Column, Integer, String, ForeignKey, Table
 from sqlalchemy.orm import relationship
 
 association_table = Table('association', Base.metadata,
-                          Column('lesson_id', Integer, ForeignKey('lessons.id'))),
-Column('group_id', Integer, ForeignKey('groups.id'))
+                          Column('lesson_id', Integer, ForeignKey('lessons.id')),
+                          Column('group_id', Integer, ForeignKey('groups.id')))
 
 
 class Lesson(Base):
@@ -15,3 +15,4 @@ class Lesson(Base):
 
     def __repr__(self):
         return f"Предмет (ID: {self.id}, Название: {self.lesson_title})"
+
