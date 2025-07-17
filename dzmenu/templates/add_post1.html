@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{{ super() }}
+
+{% for cat, msg in get_flashed_messages(True) %}
+<div  class="flash {{ cat }}">{{ msg }}</div>
+{% endfor %}
+
+<div class="page">
+    <header class="head">
+      <picture class="pic">
+        <img class="loding" src="/images/loading.png" alt="Загрузка">
+      </picture>
+      <div class="colu">
+        <div class="dlina">
+          <div class="rov">
+          <p class="lod">UPLODING 40%</p>
+          <p class="about">About 23 minutes remaining</p>
+        </div>
+        </div>
+        <div class="text">
+          <h2>Title of video</h2>
+          <p class="your">*Your video is still uploading. Please kepp this page open untilit's done.</p>
+        </div>
+      </div>
+        <button class="btn">DONE</button>
+    </header>
+    </div>
+
+{% endblock %}

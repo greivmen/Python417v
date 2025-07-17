@@ -4861,12 +4861,12 @@ import re
 #
 
 
-import os
-
-from DZpython1.price_list.database import DATABASE_NAME
-import car_database as db_creator
-if __name__ == '__main__':
-    db_is_creator = os.path.exists(DATABASE_NAME)
-    if not db_is_creator:
-        db_creator.car_database()
-
+# import os
+#
+# from DZpython1.price_list.database import DATABASE_NAME
+# import car_database as db_creator
+# if __name__ == '__main__':
+#     db_is_creator = os.path.exists(DATABASE_NAME)
+#     if not db_is_creator:
+#         db_creator.car_database()
+#

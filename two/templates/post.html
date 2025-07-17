@@ -3,5 +3,6 @@
 
 {% block content %}
 {{ super() }}
-Содержимое главной страницы
+
+<div>{{ post | safe }}</div>
 {% endblock %}
