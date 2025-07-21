@@ -1,0 +1,292 @@
+
+body{
+    background: rgb(31, 149, 218);
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.tt{
+    margin-left: 420px;
+    padding-top: 20px;
+    color: #f0cff3;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.menu{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    background: rgb(171, 75, 209);
+    padding: 20px;
+    margin-top: 0;
+}
+
+.content{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.flash{
+    padding: 10px;
+}
+
+.success{
+    border: 1px solid #21DB56;
+    background: #AEFFC5;
+}
+
+.error{
+    border: 1px solid #FF4343;
+    background: #FF9C9C;
+}
+
+.menu a{
+    font-weight: bold;
+    color: aqua;
+}
+
+
+
+.page {
+  max-width: 1600px;
+  min-height: 100vh;
+  background-color: rgb(178, 208, 218);
+  margin: 0 auto;
+  padding: 200px 150px;
+}
+.head {
+  background-color: rgb(252, 252, 252);
+  padding: 20px 30px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.pic {
+  display: block;
+  width: 353px;
+  height: 153px;
+}
+.loding {
+  width: 100%;
+  height: 100%;
+}
+.dlina {
+  border: 1.8px solid rgb(113, 173, 241);
+  width: 700px;
+  height: 40px;
+  top: 60px;
+  }
+  .rov {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 20px;
+  }
+ .lod { 
+  width: 200px;
+  height: 38px;
+  padding: 9px;
+  background: rgb(226, 234, 241); 
+ }
+ .colu {
+  flex-direction: column;
+ }
+ .text {
+  padding-top: 30px;
+ }
+ .your {
+  padding-top: 33px;
+  color: rgb(120, 121, 120);
+ }
+ .btn {
+  width: 140px;
+  height: 40px;
+  background-color: rgb(49, 49, 122);
+  color:aliceblue;
+  }
+  @media (max-width:1360px) {
+    .pic {
+      display: block;
+      width: 550px;
+      height: 253px;
+      padding-bottom: 10px;
+    }
+  }
+  @media (max-width:729px) {
+    .rov {
+      padding-right: 5px;   
+      }
+  }
+  @media (max-width:1574px) {
+    .head {
+      justify-content: center;
+    }
+  }
+  @media (max-width:1009px) {
+    .page {
+      padding: 10px 10px;
+    }
+  }
+  @media (max-width:727px) {
+    .dlina {
+      width: 400px;
+      }
+  }
+  @media (max-width:727px) {
+    .dlina {
+      width: 522px;
+      }
+  }
+  @media (max-width:727px) {
+    .your {
+      padding-bottom: 20px;
+     }
+  }
+  @media (max-width:727px) {
+    .btn {
+      width: 522px;
+      height: 40px;
+      background-color: rgb(49, 49, 122);
+      color:aliceblue;
+      }
+  }
+
+
+
+
+.cir {
+    width: 400px;
+    height: 400px;
+    margin-left: 500px ;
+    border: 4px solid rgb(36, 110, 221);
+    border-radius: 50%;
+    padding: 20px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    background-color: rgb(73, 22, 107);
+}
+.toch {
+    position: absolute;
+    top: 290px;
+    left: 790px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(36, 110, 221);
+}
+
+.min {
+    width: 10px;
+    height: 190px;
+    background: rgb(106, 202, 231);
+    position: absolute;
+    top: 107px;
+    left: 795px;
+    border-radius: 6px 6px;
+    transform-origin: right bottom;
+    transition: all 0.5s ease;
+    animation: rotate 5s linear infinite;
+}
+.ho {
+    width: 10px;
+    height: 120px;
+    background: rgb(38, 96, 114);
+    position: absolute;
+    top: 177px;
+    left: 795px;
+    border-radius: 6px 6px;
+    transform-origin: right bottom;
+    transition: all 0.5s ease;
+    animation: rotate 10s linear infinite;
+}
+@keyframes rotate {
+    from {
+      transform: rotate(-360deg);
+    }
+  }
+
+
+ul{
+  list-style: none;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.element{
+  width: 250px;
+  background:  #CCC;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+
+p > a{
+  text-decoration: none;
+  color: #242020;
+}
+
+li p, li div{
+  border: 1px solid #CCC;
+  padding: 10px 20px;
+  border-radius: 10px;
+  
+
+  
+}
+
+p.title{
+  margin: 0;
+  font-size: bold;
+  background: #0dee72;
+
+  
+}
+
+li div{
+  padding: 10px 20px;
+
+}
+
+p.title a{
+  display: block;
+}
+
+
+
+.annonce{
+  margin-top: -1px;
+  margin-bottom: 40px;
+  background: #f0cff3;
+}
+
+.btn{
+  border-color: #CCC;
+  border-radius: 40px;
+  width: 250px;
+  background-color: #4CAF50;
+ 
+
+}
+button a{
+  display: block;
+  text-decoration: none;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+  
+
+}
+
+.title2{
+  color: #ffc400;
+  
+}
+
+button:hover{
+  background-color: #FF9C9C;
+
+}
